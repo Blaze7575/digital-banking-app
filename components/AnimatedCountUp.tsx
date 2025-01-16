@@ -15,7 +15,7 @@ function AnimatedCountUp({ amount }: { amount: number }) {
 
   return (
     <div className="w-full">
-      <CountUp end={amount} prefix="Rs " decimalPlaces={4} />
+      <CountUp start={0} end={amount} prefix="Rs " decimalPlaces={4} />
     </div>
   );
 }
