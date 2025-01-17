@@ -18,20 +18,21 @@ function SidebarLeft({ user }: SiderbarProps) {
   // Functions
 
   return (
-    <section className="siderbar px-2 py-4">
+    <section className="sidebar">
       <nav className="flex flex-col gap-6">
-        <div className="ml-2 mb-12 flex">
-          <Link href={"/"} className="flex items-center gap-2">
+        <div className="ml-2 mb-6 flex">
+          <Link href={"/"} className="flex items-center gap-2 cursor-pointer">
             <Image
               src={"/icons/logo.svg"}
               width={34}
               height={34}
+              className="max-xl:size-14"
               alt="Horizon"
             />
             <h1 className="sidebar-logo">Horizon</h1>
           </Link>
         </div>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
           {sidebarLinks.map((elem, i) => {
             const isActive =
               pathname === elem.route || pathname.startsWith(`${elem.route}/`);
@@ -61,7 +62,9 @@ function SidebarLeft({ user }: SiderbarProps) {
             );
           })}
         </div>
+        USER
       </nav>
+      FOOTER
     </section>
   );
 }

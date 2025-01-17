@@ -1,5 +1,7 @@
 import HeaderBox from "@/components/HeaderBox";
+import SidebarRight from "@/components/SidebarRight";
 import TotalBalanceBox from "@/components/TotalBalanceBox";
+
 import React from "react";
 
 function page() {
@@ -8,7 +10,7 @@ function page() {
   // Backend Calls
 
   // Refs and States
-  const isLoggedIn = { firstname: "Blaze", isAuthenticated: true };
+  const isLoggedIn = { firstName: "Blaze", isAuthenticated: true };
   // Emits
 
   // Functions
@@ -21,7 +23,7 @@ function page() {
             <HeaderBox
               type="greeting"
               title="Welcome"
-              user={isLoggedIn?.firstname || "Guest"}
+              user={isLoggedIn?.firstName || "Guest"}
               subtext="Acces your account and manage it efficiently."
             />
 
@@ -31,9 +33,10 @@ function page() {
               totalCurrentBalance={1250.69}
             />
           </header>
+          RECENT TRANSACTIONS
         </div>
+        <SidebarRight user={isLoggedIn} />
       </div>
-      <div></div>
     </>
   );
 }
