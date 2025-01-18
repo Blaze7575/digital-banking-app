@@ -10,7 +10,21 @@ function page() {
   // Backend Calls
 
   // Refs and States
-  const isLoggedIn = { firstName: "Blaze", isAuthenticated: true };
+  const isLoggedIn: User = {
+    firstName: "Blaze",
+    lastName: "7575",
+    email: "blaze@zahoo.com",
+    $id: "",
+    address1: "",
+    userId: "",
+    city: "",
+    dateOfBirth: "",
+    dwollaCustomerId: "",
+    dwollaCustomerUrl: "",
+    postalCode: "",
+    ssn: "",
+    state: "",
+  };
   // Emits
 
   // Functions
@@ -35,7 +49,7 @@ function page() {
           </header>
           RECENT TRANSACTIONS
         </div>
-        <SidebarRight user={isLoggedIn} />
+        <SidebarRight user={isLoggedIn} transactions={[]} banks={[{}, {}]} />
       </div>
     </>
   );
