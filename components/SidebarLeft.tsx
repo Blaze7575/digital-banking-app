@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import Footer from "./Footer";
 
 function SidebarLeft({ user }: SiderbarProps) {
   // Hooks
@@ -64,7 +65,7 @@ function SidebarLeft({ user }: SiderbarProps) {
         </div>
         USER
       </nav>
-      FOOTER
+      <Footer user={user} />
     </section>
   );
 }
