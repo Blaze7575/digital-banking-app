@@ -59,16 +59,3 @@ export async function login({ email, password }: loginProps) {
     console.error(error);
   }
 }
-
-export async function logout() {
-  try {
-    const { account } = await createSessionClient();
-
-    (await cookies()).delete("appwrite-session");
-
-    await account.deleteSession("current");
-  } catch (error) {
-    return null;
-  }
-  return null;
-}

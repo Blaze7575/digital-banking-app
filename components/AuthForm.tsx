@@ -48,10 +48,7 @@ function AuthForm({ type }: { type: string }) {
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-    // setisLoading(true);
+    setisLoading(true);
 
     try {
       // create a new user with appwrite and create a plaid token

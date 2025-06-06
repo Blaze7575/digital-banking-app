@@ -1,4 +1,3 @@
-import { logout } from "@/lib/actions/user.actions";
 import { FooterProps } from "@/types";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -13,10 +12,11 @@ function Footer({ user, type = "desktop" }: FooterProps) {
   // Emits
 
   // Functions
-  const handleLogOut = async () => {
-    const loggedOut = await logout();
 
-    router.push("/Login");
+  const handleLogOut = async () => {
+    const res = await fetch("/api/logout", { method: "POST" });
+
+    if (res) router.push("/Login");
   };
 
   return (
@@ -30,7 +30,7 @@ function Footer({ user, type = "desktop" }: FooterProps) {
         <span className="text-black-1 font-semibold">{user.name}</span>
         <span className="text-gray-500">{user.email}</span>
       </div>
-      <button onClick={handleLogOut}>
+      <button type="button" onClick={handleLogOut}>
         <Image src="/icons/logout.svg" width={35} height={35} alt="logout" />
       </button>
     </div>

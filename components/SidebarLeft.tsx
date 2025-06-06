@@ -8,8 +8,6 @@ import React from "react";
 import Footer from "./Footer";
 
 function SidebarLeft({ user }: SiderbarProps) {
-  ` I have to correctly change to login page when logging out and fix any showing error messages`;
-
   // Hooks
 
   // Backend Calls
